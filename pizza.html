@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-details {
+            flex: 1;
+        }
+
+        .menu-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-details p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .menu-details .price {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .menu-details .rating {
+            font-size: 0.9rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-details .rating .icon {
+            color: #ffc107;
+            margin-right: 5px;
+        }
+
+        .menu-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-actions button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-actions button:hover {
+            background-color: #218838;
+        }
+
+        .menu-actions span {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+
+        .logo img {
+        height: 132px;
+        }
+
+        .dropdown-arrow {
+        font-size: 12px;
+        }
+
+        .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        }
+
+        .new-badge {
+        color: orange;
+        font-size: 12px;
+        margin-left: 5px;
+        }
+
+        .cart-count {
+        font-weight: bold;
+        color: #000;
+        }
+        .footer {
+            background-color: #121621;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        .footer-nav {
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: #f39c12;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-item logo">
+            <img src="./image/name.png" alt="Logo">
+            <span style="margin-left: 5rem;font-family: cursive;
+    font-size: 2rem">Pizza</span>
+        </div>
+        <div class="navbar-links">
+            <a href="#" class="navbar-item"><span class="icon">💼</span> Sayali Pure-Veg</a>
+            <a href="#" class="navbar-item"><span class="icon">🔍</span> Search</a>
+            <a href="#" class="navbar-item"><span class="icon">🎯</span> Offers <span class="new-badge">NEW</span></a>
+            <a href="#" class="navbar-item"><span class="icon">❓</span> Help</a>
+            <a href="#" class="navbar-item"><span class="icon">👤</span> Sign In</a>
+            <a href="#" class="navbar-item"><span class="icon">🛒</span> Cart <span class="cart-count">0</span></a>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="heading">Recommended (7)</div>
+
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Sayali Special Pizza</h3>
+                <div class="price">₹149</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 3.8 (7)
+                </div>
+                <p>Serves 1 | 1 personal Veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the
+                    nutritional data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/vegii.avif" alt="Non-Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+                
+            </div>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Margherita Pizza</h3>
+                <div class="price">₹159</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 4.1 (10)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/marg.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+                
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Corn & Cheese</h3>
+                <div class="price">₹179</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 4.5 (12)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/corn.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+              
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Spiced Paneer</h3>
+                <div class="price">₹199</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 3.9 (16)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/paneer.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+                
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Chatpata Tomato Onion & Chilli</h3>
+                <div class="price">₹149</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 4.6 (20)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/tomato.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+               
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Classic Onion Capsicum</h3>
+                <div class="price">₹99</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 3.3 (18)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/cap.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+               
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-details">
+                <h3>Classic Corn</h3>
+                <div class="price">₹109</div>
+                <div class="rating">
+                    <span class="icon">⭐</span> 3.9 (24)
+                </div>
+                <p>Serves 1 | 1 personal veg pizza, 2 pc garlic bread & 1 Pepsi PET. For meals, refer to the nutritional
+                    data for individual products.</p>
+            </div>
+            <div class="menu-image">
+                <img src="./image/clas.avif" alt="Veg Box">
+            </div>
+            <div class="menu-actions">
+                <button>Add</button>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    
+        <nav class="footer-nav">
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Our Team</a>
+        </nav>
+    
+        <p class="copyright">Copyright ©Sayali Pure-Veg; Designed by Yash Patil</p>
+    </footer>
+    
+    
+
+</body>
+
+</html>
